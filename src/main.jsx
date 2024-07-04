@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Profiler } from 'react'
 import ReactDOM from 'react-dom/client'
 
 import './index.css'
@@ -11,6 +11,9 @@ import Home from './component/Home/Home.jsx';
 import Login from './component/Login.jsx/Login.jsx';
 import Register from './component/Register.jsx/Register.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
+import Order from './order/Order.jsx';
+import PrivateRouts from './component/routs/PrivateRouts.jsx';
+import Profile from './component/profile/Profile.jsx';
 
 
 const router = createBrowserRouter([
@@ -29,6 +32,14 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>,
+      },
+      {
+        path: '/orders',
+        element: <PrivateRouts><Order></Order></PrivateRouts>,
+      },
+      {
+        path: '/profile',
+        element: <PrivateRouts><Profile></Profile></PrivateRouts>,
       },
     ],
   },

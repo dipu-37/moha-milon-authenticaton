@@ -11,20 +11,20 @@ const Register = () => {
     
 
     const handleRegister = e => {
-        e.preventdefault()
+        e.preventDefault();
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(name, email, password);
 
-        //create user in firebase
-        createUser(email, password)
-        .then(result =>{
-            console.log(result.user)
-        })
-        .catch(error =>{
-            console.log(error);
-        })
+         // create user in firebase
+         createUser(email, password)
+         .then(result => {
+             console.log(result.user)
+         })
+         .catch(error => {
+             console.error(error);
+         })
     }
     return (
         <div className="hero bg-base-200 min-h-screen">
